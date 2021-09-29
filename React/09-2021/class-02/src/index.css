@@ -1,0 +1,109 @@
+:root {
+  /* How to declare a CSS variable. These variables can later be used using the syntax var(--variableName) */
+  --tendzere-primary: #fa4224;
+  --tendzere-secondary: #fddc5c;
+  --tendzere-accent: #475f94;
+  --tendzere-dark: #212121;
+  --tendzere-light: #f5f5f5;
+  --tendzere-shadows: 2px 0px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#petko,
+#root,
+.main-grid-container {
+  height: 100%;
+}
+
+.main-grid-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* The two properties required for having a hamburger layout. Remember to set body, the #root tag to height 100% first. */
+}
+
+.app-header,
+.app-footer {
+  padding: 1rem;
+  box-shadow: var(--tendzere-shadows);
+  position: relative;
+}
+
+.app-header {
+  background-color: var(--tendzere-primary);
+}
+
+.app-footer {
+  background-color: var(--tendzere-accent);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.app-header h2,
+.app-footer p {
+  margin: 0;
+  color: var(--tendzere-light);
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 1rem;
+  text-transform: uppercase;
+  border: var(--tendzere-primary);
+  background-color: var(--tendzere-primary);
+  color: var(--tendzere-light);
+  cursor: pointer;
+  box-shadow: var(--tendzere-shadows);
+  border: 2px solid var(--tendzere-primary);
+  border-radius: 5px;
+  display: block;
+  margin: 2rem auto;
+  font-size: 22px;
+  transition: ease-out 0.4s;
+  transition-delay: 200ms;
+}
+
+.btn:hover {
+  background-color: var(--tendzere-light);
+  color: var(--tendzere-primary);
+}
+
+.tendzere-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  place-content: center;
+  margin: 150px 0;
+  row-gap: 100px;
+}
+
+.tendzere-item {
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  justify-self: center;
+  box-shadow: var(--tendzere-shadows);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.tendzere-item img {
+  height: 100%;
+  width: 100%;
+  transition: 0.3s ease-out;
+}
+
+.tendzere-item img:hover {
+  transform: scale(1.1);
+}

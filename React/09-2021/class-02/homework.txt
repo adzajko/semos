@@ -1,0 +1,4 @@
+1. Create a react app using the npm command.
+2. Create a hamburger layout using CSS grid. Color both the header and the footer.
+3. Create a Song List component. The Song List component should use the data from homework.js
+4. Create a SongItem component. Pass the values as props and render them to the screen.
