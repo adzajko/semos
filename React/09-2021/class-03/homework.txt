@@ -1,0 +1,9 @@
+1. Create a React App
+2. Create a login form using useState.
+3. The Login form should have three fields. email, username, password. Remember to use the corresponding input types.
+4. Prevent submit if the above input values are empty 
+5. Once submitted, add an additional check that checks if username or password are below 6 characters and throws an alert if conditions are unmet.
+
+BONUS
+Add a toggle password button.
+Add an email pattern validation that checks if the email is valid. (Hint: RegExp to the rescue...);
