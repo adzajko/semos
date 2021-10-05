@@ -1,0 +1,28 @@
+HTTP REQUEST
+
+REQUEST URL
+REQUEST METHOD = GET, POST, PUT, PATCH, DELETE
+BODY = JSON / File
+HEADERS = metadata, CORS
+PARAMS = http://youtube.com/videos/16t2631t3621
+QUERY_PARAMS = http://array.com/data?page=1&items=50
+REQUEST_WITH_PORT = http://localhost:8080/
+
+
+RESPONSE
+
+Status Code:
+
+1xx 101, 102, 103
+2xx 200, 201
+3xx 301, 302 Redirects
+4xx 400 - Bad Request, 401 - Unauthorized, 403 - Forbidden, 404 - Not found, 409 - Conflict
+5xx 500 - Internal Server Error
+
+HEADERS - CORS
+BODY
+
+Create = POST
+Read = GET
+Update = PUT / PATCH
+Delete = DELETE
