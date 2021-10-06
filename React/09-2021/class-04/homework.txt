@@ -1,0 +1,12 @@
+Create a react app with the following routes:
+
+/ - Home - Should have a hero section welcoming the user
+/about - About - Should have a lorem ipsum paragraph inside.
+/posts - Posts - Using the JSON placeholder API (https://jsonplaceholder.typicode.com/posts), make an HTTP call using useEffect and render all the posts in a grid format. Create one card for each post.
+404 Handler
+
+Remember to add in-app navigation.
+
+BONUS
+
+Instead of using the JSON placeholder, use one of your Node apps as the API.
