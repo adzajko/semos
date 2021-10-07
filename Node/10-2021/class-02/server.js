@@ -1,6 +1,6 @@
 const http = require('http');
 const path = require('path');
-const { fileReader, fileWriter } = require('./fileSystem');
+const { fileReader, fileWriter } = require('./fileSystem'); // Object destructuring
 
 const pathToFile = path.join(__dirname, 'myNameIs.txt');
 

@@ -1,0 +1,9 @@
+Create a HTTP server listening on 8080 port.
+
+In a separate file, create a file reader function and a file writer function.
+Export these functions.
+
+Import these functions back into the main server file.
+
+By chaining promises, first write something to a file and immediately after call the readFile function.
+(Hint: should be done in a .then() block)

@@ -1,3 +1,6 @@
+/**
+ * We first need to import the filesystem and path modules before using them
+ */
 const fs = require('fs/promises');
 const path = require('path');
 
@@ -27,8 +30,9 @@ const pathToFile = path.join(__dirname, 'sample.txt');
  * @returns {Promise<void>}
  */
 const fileWriter = async (pathToFile, fileData) => {
+  // The Async Await Syntax comproises of a function thats been declared async
   try {
-    await fs.writeFile(pathToFile, fileData);
+    await fs.writeFile(pathToFile, fileData); // Use await on asynchronous operations
   } catch (err) {
     console.log(err);
   }
