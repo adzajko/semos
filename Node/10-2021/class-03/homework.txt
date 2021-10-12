@@ -1,0 +1,5 @@
+Create an HTTP Server.
+Install Express and configure it.
+Create a Router with two routes in it: 
+    /posts that returns an array of objects as response (GET method)
+    /posts that adds a post to the array of object (POST method)

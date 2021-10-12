@@ -1,0 +1,30 @@
+A request must have at least URL and Method
+
+Most used methods are: GET, POST, PUT, DELETE
+
+Create = POST
+Read = GET
+Update = PUT 
+Delete = DELETE
+
+S - Separation of Concerns
+O - Open-shut Principle
+L - Liskov substitution Principle
+I - Inversion of Control
+D - Dependency Injection
+
+Model - Package - Core - Repository
+View - 
+Controller - Handler
+
+Falsy Values in JS 
+ - null
+ - ""
+ - false
+ - undefined
+
+ Truthy values in JS
+  " k "
+  true
+  []
+  {}
