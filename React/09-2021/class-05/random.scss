@@ -1,0 +1,17 @@
+/** node-sass */
+
+.random {
+  .random2 {
+  }
+  &.adjacentClass {
+  }
+  &:hover {
+  }
+}
+
+.random .random2 {
+}
+.random.adjacentClass {
+}
+.random:hover {
+}

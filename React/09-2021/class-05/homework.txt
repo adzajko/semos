@@ -1,0 +1,11 @@
+1. Create a React App with the following Routes: Great Works, About
+2. Great Works should be a page that lists an array containing image of a great work (e.g. Mona Lisa) and title.
+3. Mimic an http call (Hint: using async will turn any function into a Promise function) that returns the array
+4. Implement styling for each card using styled components.
+5. Use a reducer to display the data.
+
+BONUS 
+
+Add a loading state by using setTimeout inside the service call. 
+Display a loading spinner that is only active if loading is set to true.
+
