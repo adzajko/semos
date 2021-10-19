@@ -1,0 +1,20 @@
+In order to connect to a MongoDB database we require the following:
+
+1. A Mongo Atlas Cluster
+2. Connection String
+3. MongoDB Driver for Node (Standard or Mongoose)
+4. Compass or Robo3T
+
+HOW TO:
+
+1. Create a Mongo Atlas account (https://cloud.mongodb.com/)
+2. Once there, create a new Cluster. Select Shared Tier, an Europe server and the M-0 tier (free-tier)
+3. It will take a couple of minutes to set up the cluster, during which time we can configure the network access and db users.
+4. Create a DB user in the tab database access. This will be a different user than the one we use to log in to Mongo. Grant atleast read/write any database privileges.
+5. Open the Network access tab and add your IP address.
+6. Once the cluster is setup, click on the Connect button, select connect your application. This will give you a connection string.
+7. Use the connection string in Compass and Robo3T. Remember to change <password> with your actual password.
+8. In order to connect via a Node App, we will need dotenv and mongoose via npm install.
+9. Inside the .env file, add your connection string. e.g. MONGO_URI=connectionstring
+10. Create a db.js file, inside, import the mongoose library. Create a wrapper function (async). Inside just type await mongoose.connect(process.env.MONGO_URI)
+11. Import the function inside your server.js file and call it. Use .then() and .catch()

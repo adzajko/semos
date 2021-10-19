@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Planetarium API",
-    "description": "See planets, get planet details",
+    "title": "Residents API",
+    "description": "A list of all the residents in your street.",
     "contact": {
       "email": "adzajko@hotmail.com"
     },
@@ -19,30 +19,26 @@
   ],
   "tags": [
     {
-      "name": "Planets",
-      "description": "Collection of requests for all planets."
-    },
-    {
-      "name": "Accounts",
-      "description": "Collection of requests for account manipulation."
+      "name": "Residents",
+      "description": "Collection of requests for all residents."
     }
   ],
   "paths": {
-    "/planets": {
+    "/residents": {
       "get": {
-        "tags": ["Planets"],
-        "summary": "Retrieves all the planets.",
-        "description": "Fetch a list of all the planets.\n",
-        "operationId": "getAllPlanets",
+        "tags": ["Residents"],
+        "summary": "Retrieves all the Residents.",
+        "description": "Fetch a list of all the Residents.\n",
+        "operationId": "getAllResidents",
         "responses": {
           "200": {
-            "description": "List of all planets",
+            "description": "List of all Residents",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Planet"
+                    "$ref": "#/components/schemas/Resident"
                   }
                 }
               }
@@ -54,97 +50,64 @@
         }
       },
       "post": {
-        "tags": ["Planets"],
-        "summary": "Add a planet.",
-        "description": "Add planet",
-        "operationId": "addPlanet",
+        "tags": ["Residents"],
+        "summary": "Add a Resident.",
+        "description": "Add Resident",
+        "operationId": "addResident",
         "requestBody": {
-          "description": "Planet to add.",
+          "description": "Resident to add.",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Planet"
+                "$ref": "#/components/schemas/Resident"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Planet created."
+            "description": "Resident created."
           },
           "400": {
-            "description": "invalid input, object invalid"
+            "description": "Invalid input, object invalid."
           },
           "409": {
-            "description": "an existing item already exists"
+            "description": "An existing item already exists."
           }
         }
       }
     },
-    "/planets/{id}": {
-      "get": {
-        "tags": ["Planets"],
-        "summary": "Get a single planet's info.",
-        "operationId": "getPlanetById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The ID of the planet.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A Planet's info.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Planet"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
+    "/residents/{_id}": {
       "put": {
-        "tags": ["Planets"],
-        "summary": "Edit a planet's info",
-        "operationId": "editPlanet",
+        "tags": ["Residents"],
+        "summary": "Edit a Resident's info",
+        "operationId": "editResident",
         "parameters": [
           {
-            "name": "id",
+            "name": "_id",
             "in": "path",
-            "description": "The ID of the planet.",
+            "description": "The ID of the Resident.",
             "required": true,
             "style": "simple",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
         "requestBody": {
-          "description": "Planet's info",
+          "description": "Resident's info",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Planet"
+                "$ref": "#/components/schemas/Resident"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Planet's info edited."
+            "description": "Resident's info edited."
           },
           "400": {
             "description": "Bad request, missing info."
@@ -155,19 +118,19 @@
         }
       },
       "delete": {
-        "tags": ["Planets"],
-        "summary": "Delete a planet by id.",
-        "description": "Delete a planet by it's id.",
+        "tags": ["Residents"],
+        "summary": "Delete a Resident by id.",
+        "description": "Delete a Resident by it's id.",
         "parameters": [
           {
-            "name": "id",
+            "name": "_id",
             "in": "path",
-            "description": "The ID of the planet.",
+            "description": "The ID of the Resident.",
             "required": true,
             "style": "simple",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -179,7 +142,7 @@
             "description": "Missing id!"
           },
           "500": {
-            "description": "Internal server error, planet cannot be deleted."
+            "description": "Internal server error, Resident cannot be deleted."
           }
         }
       }
@@ -187,27 +150,26 @@
   },
   "components": {
     "schemas": {
-      "Planet": {
-        "required": ["distanceFromSun", "name", "size"],
+      "Resident": {
+        "required": ["name", "hasCar", "isBoomer"],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+          "_id": {
+            "type": "string"
           },
           "name": {
             "type": "string",
-            "example": "Neptune"
+            "example": "Janko Glavcev"
           },
-          "size": {
-            "type": "number",
-            "description": "The radius size of the planet, in km.",
-            "example": 6801
+          "hasCar": {
+            "type": "boolean",
+            "description": "Does the resident have a car?",
+            "example": false
           },
-          "distanceFromSun": {
-            "type": "number",
-            "description": "The distance from the Sun to the planet, in km."
+          "isBoomer": {
+            "type": "boolean",
+            "description": "Is the resident a boomer?",
+            "example": true
           }
         }
       }
