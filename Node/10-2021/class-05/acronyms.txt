@@ -1,0 +1,2 @@
+model = pkg = core = repository
+controllers = handlers
