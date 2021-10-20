@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { getAllProducts } from '../../services/products';
 import ProductItem from '../ProductItem';
 import { Button } from '@mui/material';
+import { useUserContext } from '../../context/auth';
+import { useHistory } from 'react-router';
 
 const StyledDashboard = styled.section`
   padding: 50px 5%;
@@ -23,7 +25,10 @@ const StyledDashboard = styled.section`
 `;
 
 const Dashboard = () => {
+  const { logOutProvider } = useUserContext();
+  const history = useHistory();
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     getAllProducts()
       .then((data) => setProducts(data))
@@ -32,7 +37,16 @@ const Dashboard = () => {
       });
   }, []);
 
-  const handleLogout = () => {};
+  const handleToggleTheme = () => {
+    const body = document.getElementById('body');
+    body.classList.toggle('dark');
+  };
+
+  const handleLogout = () => {
+    logOutProvider().then(() => {
+      history.push('/login');
+    });
+  };
 
   return (
     <StyledDashboard>
@@ -42,6 +56,9 @@ const Dashboard = () => {
           Log Out
         </Button>
       </div>
+      <Button variant="contained" color="primary" onClick={handleToggleTheme}>
+        Toggle theme
+      </Button>
       <div className="products-container">
         {products.map((product) => (
           <ProductItem product={product} key={product.id} />

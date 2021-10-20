@@ -9,6 +9,7 @@ import Dashboard from '../components/Dashboard';
 import Navbar from '../components/layout/Navbar';
 import Login from '../components/Login';
 import Register from '../components/Register';
+import { useUserContext } from '../context/auth';
 
 const routes = [
   {
@@ -29,13 +30,13 @@ const routes = [
 ];
 
 const PrivateRoute = (props) => {
-  const activeUser = true;
+  const { activeUser } = useUserContext();
 
   if (!activeUser) {
     return <Redirect to={'/login'} />;
   }
 
-  return <Route {...props} />;
+  return <Route {...props} />; // <=> <Route path={props.path} component={props.component} />
 };
 
 const ApplicationRouter = () => {

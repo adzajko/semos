@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useUserContext } from '../../context/auth';
 
 const StyledHeader = styled.header`
   background-color: var(--app-primary);
@@ -13,12 +14,20 @@ const StyledHeader = styled.header`
     color: var(--app-light);
     text-transform: uppercase;
   }
+
+  & p {
+    margin-top: 12px;
+    text-align: right;
+    color: var(--app-light);
+  }
 `;
 
 const Navbar = () => {
+  const { activeUser } = useUserContext();
   return (
     <StyledHeader>
       <h2>Product Dashboard</h2>
+      {activeUser && <p>Currently logged in as: {activeUser}.</p>}
     </StyledHeader>
   );
 };

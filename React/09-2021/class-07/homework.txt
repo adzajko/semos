@@ -1,0 +1,7 @@
+1. Expand on the current functionalities by adding the Register page.
+2. It should add a new user to the array (already handled in the services file) and redirect back to login once successfull creation (Add a toast)
+
+
+BONUS 
+
+In order to get ready for Redux, replace the useState in Dashboard with a reducer function.
