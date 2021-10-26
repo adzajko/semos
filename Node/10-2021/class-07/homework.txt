@@ -1,0 +1,4 @@
+1. Create an express app with the following dependencies: express, jsonwebtoken, mongoose, dotenv, bcrypt
+2. Create two models, User & Books
+3. Add login and register functionalities.
+4. Regarding books, create only one endpoint, getAllBooks, that is only accessible by having a valid token. (hint: should be in the authorization header of the request.)
