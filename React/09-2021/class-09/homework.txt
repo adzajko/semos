@@ -1,0 +1,15 @@
+Create an application for ToDos
+
+A single todo has the following properties: title, description, isCompleted
+
+Implement full CRUD using redux for todos. 
+Meaning, ability to create a new todo (C), place all todos in a list (R), edit a todo (U), delete a todo (D).
+
+Create a login state (using either context or redux) that shows the add, edit and delete actions if a user is logged in.
+
+
+BONUS
+
+Create a login screen and a register screen. These two paths should be the only ones available if a user is not logged in.
+Use JWT and localStorage to handle the login session.
+Create your own Node backend to handle both the todo data and the login state.
