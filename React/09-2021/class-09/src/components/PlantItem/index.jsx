@@ -2,6 +2,9 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import PlantButton from '../StyledButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { deletePlant } from '../../redux/plants';
+import { selectLoginState } from '../../redux/auth';
 
 const PlantContainer = styled.article`
   padding: 20px;
@@ -32,12 +35,16 @@ const PlantContainer = styled.article`
 
 const PlantItem = ({ plant }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector(selectLoginState);
 
   const navigateToDetails = () => {
     history.push(`/plants/${plant.id}`);
   };
 
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    dispatch(deletePlant(plant));
+  };
 
   return (
     <PlantContainer>
@@ -45,24 +52,26 @@ const PlantItem = ({ plant }) => {
         <img src={plant.imageUrl} alt={plant.name} />
       </div>
       <h3>{plant.name}</h3>
-      <div className="btn-group">
-        <PlantButton
-          onClick={navigateToDetails}
-          className="edit-btn"
-          color="var(--app-dark)"
-          bgColor="var(--app-edit)"
-        >
-          Edit
-        </PlantButton>
-        <PlantButton
-          onClick={handleDelete}
-          className="delete-btn"
-          color="var(--app-light)"
-          bgColor="var(--app-danger)"
-        >
-          Delete
-        </PlantButton>
-      </div>
+      {isLoggedIn && (
+        <div className="btn-group">
+          <PlantButton
+            onClick={navigateToDetails}
+            className="edit-btn"
+            color="var(--app-dark)"
+            bgColor="var(--app-edit)"
+          >
+            Edit
+          </PlantButton>
+          <PlantButton
+            onClick={handleDelete}
+            className="delete-btn"
+            color="var(--app-light)"
+            bgColor="var(--app-danger)"
+          >
+            Delete
+          </PlantButton>
+        </div>
+      )}
     </PlantContainer>
   );
 };

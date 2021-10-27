@@ -3,6 +3,8 @@ import { useParams, useHistory } from 'react-router';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
 import PlantButton from '../StyledButton';
+import { useSelector, useDispatch } from 'react-redux';
+import { addPlant, editPlant, selectPlants } from '../../redux/plants';
 
 const DetailsContainer = styled.section`
   padding: 50px 150px 0 150px;
@@ -46,14 +48,25 @@ const DetailsContainer = styled.section`
 
 const PlantDetails = () => {
   const { id } = useParams();
+  const plants = useSelector(selectPlants);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const [name, setName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [type, setType] = useState('');
   const [plantId, setPlantId] = useState('');
-  const history = useHistory();
 
-  useEffect(() => {}, [id]);
+  useEffect(() => {
+    const foundPlant = plants.find((plant) => plant.id === id);
+
+    if (foundPlant) {
+      setName(foundPlant.name);
+      setImageUrl(foundPlant.imageUrl);
+      setType(foundPlant.type);
+      setPlantId(foundPlant.id);
+    }
+  }, [id]);
 
   const handleCancelClick = (event) => {
     event.preventDefault();
@@ -64,8 +77,10 @@ const PlantDetails = () => {
     event.preventDefault();
     if (plantId) {
       const newPlant = { id: plantId, name, type, imageUrl };
+      dispatch(editPlant(newPlant));
     } else {
       const newPlant = { id: v4(), name, type, imageUrl };
+      dispatch(addPlant(newPlant));
     }
 
     history.push('/');

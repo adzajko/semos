@@ -1,5 +1,7 @@
 import ApplicationRouter from './routes';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { selectLoginState } from './redux/auth';
 
 const AppContainer = styled.section`
   height: 100%;
@@ -27,10 +29,12 @@ const AppContainer = styled.section`
 `;
 
 function App() {
+  const { isLoggedIn, activeUser } = useSelector(selectLoginState);
   return (
     <AppContainer>
       <header>
         <h2>Healthy Life {':)'}</h2>
+        {isLoggedIn && <p>Welcome back, {activeUser} !</p>}
       </header>
       <ApplicationRouter></ApplicationRouter>
       <footer>
