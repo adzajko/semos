@@ -1,0 +1,13 @@
+Create an express app, connect it to mongo
+
+Create two models, Cars and Drivers
+
+The Car model should have the following fields: make, model, yearOfBuild, litresPerKilometre. the make should be indexed.
+
+The driver model should have the following fields: name, country, experience. Name and country should be indexed.
+
+Create the following routes: getAllDrivers (where a possible country query param is sent, that only sends back the drivers in a single country)
+
+sortCars where using the atomic operator .sort() the cars are being organized from best consumption to worst consumption.
+
+a bulkInsertCars and a bulkInsertDrivers
