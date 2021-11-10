@@ -1,0 +1,11 @@
+Create an http server running on the 8080 port.
+
+Create a separate file, promises.js that imports the fs/promises module and path module.
+
+Create a fileWrite function that accepts two arguments, the path to the new file, and the contents.
+
+Create a fileReader function that accepts one argument, the path of the file to be read.
+
+Export both of the above functions.
+
+Import and execute them in the server.js file.
