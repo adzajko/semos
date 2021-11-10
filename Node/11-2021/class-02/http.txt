@@ -1,0 +1,19 @@
+HTTP REQUEST
+    URL
+    METHOD: GET, POST, PUT, DELETE
+    BODY
+    HEADERS
+    PARAMS: /songs/save-your-tears
+    QUERY: /songs?sortBy=ascending&limit=10
+
+HTTP RESPONSE
+    STATUS CODE: 2xx (200, 201) - SUCCESS, 4xx (400, 401, 403, 404) - CLIENT ERRORS, 5xx (500) - SERVER ERROR
+    BODY
+    HEADERS
+
+Create - POST
+Read - GET
+Update - PUT
+Delete - DELETE
+
+Represntational State Transfer - REST - uses JSON Format
