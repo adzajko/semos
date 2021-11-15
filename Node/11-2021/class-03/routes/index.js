@@ -1,8 +1,23 @@
+/**
+ * How to import the router from express.
+ */
 const router = require('express').Router();
+// Importing our custom route handlers
+const petHandlers = require('../handlers/pets');
 
-router.get('/home', async (req, res, next) => {
-  return res.status(200).json('Welcome Home (Sanitarium)');
-});
+/**
+ * Registering a GET request on the URL '/pets'
+ * Note how the handler function is passed WITHOUT executing it.
+ */
+router.get('/pets', petHandlers.getAllPets);
+/**
+ * Registering a POST request on the URL '/pets'
+ */
+router.post('/pets', petHandlers.addNewPet);
+
+// router.get('/home', async (req, res, next) => {
+//   return res.status(200).json('Welcome Home (Sanitarium)');
+// });
 
 // router.get('/home2', async (req, res, next) => {});
 

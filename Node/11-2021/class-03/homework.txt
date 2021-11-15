@@ -1,0 +1,9 @@
+Create an HTTP Server.
+Install Express and configure it.
+Create a Router with two routes in it: 
+    /posts that returns an array of objects as response (GET method)
+    /posts that adds a post to the array of object (POST method)
+
+BONUS
+
+Instead of having the objects in memory, use filesystem to write to a file and read from a file.
