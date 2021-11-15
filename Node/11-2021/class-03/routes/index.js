@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-// router.get('/home', async (req, res, next) => {
-//   return res.status(200).json('Welcome Home (Sanitarium)');
-// });
+router.get('/home', async (req, res, next) => {
+  return res.status(200).json('Welcome Home (Sanitarium)');
+});
 
 // router.get('/home2', async (req, res, next) => {});
 
