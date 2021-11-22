@@ -1,19 +1,13 @@
-let planets = [
-  {
-    id: 1,
-    name: 'Mercury',
-    size: 120,
-    distanceFromSun: 1200,
-  },
-];
+const Planet = require('../models/Planet');
 
 const getAllPlanets = async (req, res, next) => {
+  const planets = await Planet.getAllPlanets();
   return res.status(200).json(planets);
 };
 
 const getPlanetById = async (req, res, next) => {
   const id = +req.params.id;
-  const planet = planets.find((planet) => planet.id === id);
+  const planet = await Planet.getPlanetById(id);
   if (planet) {
     return res.status(200).json(planet);
   } else {
@@ -28,14 +22,7 @@ const addNewPlanet = async (req, res, next) => {
     return res.status(400).json('Missing required fields!');
   }
 
-  const newPlanet = {
-    id: planets.length + 1,
-    size: planetBody.size,
-    name: planetBody.name,
-    distanceFromSun: planetBody.distanceFromSun,
-  };
-
-  planets.push(newPlanet);
+  await Planet.addPlanet(planetBody);
   return res.status(200).json('Planet added!');
 };
 
@@ -46,27 +33,14 @@ const updatePlanet = async (req, res, next) => {
   if (!planetBody.name || !planetBody.size || !planetBody.distanceFromSun) {
     return res.status(400).json('Missing required fields!');
   }
-
-  planets = planets.map((planet) => {
-    if (planet.id === id) {
-      return {
-        id: id,
-        name: planetBody.name,
-        size: planetBody.size,
-        distanceFromSun: planetBody.distanceFromSun,
-      };
-    } else {
-      return planet;
-    }
-  });
+  await Planet.editPlanet(id, planetBody);
 
   return res.status(200).json('Planet edited');
 };
 
 const deletePlanet = async (req, res, next) => {
   const id = +req.params.id;
-  planets = planets.filter((planet) => planet.id !== id);
-
+  await Planet.deletePlanet(id);
   return res.status(200).json('Deleted planet');
 };
 
