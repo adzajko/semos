@@ -1,7 +1,7 @@
 const { model } = require('mongoose');
 
 const Product = model('products', {
-  productName: { type: String, index: true },
+  productName: { type: String, index: true, required: true },
   productPrice: Number,
   isInStock: Boolean,
   locationName: String,
