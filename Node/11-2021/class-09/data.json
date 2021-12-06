@@ -1,0 +1,38 @@
+[
+  {
+    "productName": "MSi GeForce RTX 3060 Ti",
+    "productPrice": 1099,
+    "isInStock": false,
+    "locationName": "GTC"
+  },
+  {
+    "productName": "MSi GeForce RTX 3070 Ti",
+    "productPrice": 1499,
+    "isInStock": false,
+    "locationName": "GTC"
+  },
+  {
+    "productName": "AMD Ryzen 5 5600x",
+    "productPrice": 299,
+    "isInStock": true,
+    "locationName": "Pletvaro"
+  },
+  {
+    "productName": "EVGA Supernova 850W",
+    "productPrice": 200,
+    "isInStock": true,
+    "locationName": "GTC"
+  },
+  {
+    "productName": "Gigabyte M27Q",
+    "productPrice": 350,
+    "isInStock": true,
+    "locationName": "Pletvaro"
+  },
+  {
+    "productName": "Samsung EVO M.2",
+    "productPrice": 100,
+    "isInStock": true,
+    "locationName": "GTC"
+  }
+]
