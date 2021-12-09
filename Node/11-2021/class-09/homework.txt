@@ -1,0 +1,12 @@
+Create an express app, connect it to mongo
+
+Create two models, Cars and Drivers
+
+The Car model should have the following fields: make, model, yearOfBuild. the make should be indexed.
+
+The driver model should have the following fields: name, country, experience, carId. Name and country should be indexed.
+
+Create the following routes: getAllDrivers (where a possible country query param is sent, that only sends back the drivers in a single country)
+Using lookup and aggregation this endpoint should also return all the cars the drivers use.
+
+a bulkInsertCars and a bulkInsertDrivers
