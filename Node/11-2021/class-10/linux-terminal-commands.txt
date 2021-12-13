@@ -1,4 +1,4 @@
-cd - Change Directory (cd ./random)
+cd - Change Directory (cd ../random)
 cp - Copy cp something -r /C/desktop
 ls - List 
 rm -rf ( rm -rf /)

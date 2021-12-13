@@ -1,0 +1,8 @@
+SELECT * FROM users
+WHERE age = 19
+
+
+await User.findAll();
+await User.find();
+use db.users
+db.find();
