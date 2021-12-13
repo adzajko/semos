@@ -1,0 +1,6 @@
+cd - Change Directory (cd ./random)
+cp - Copy cp something -r /C/desktop
+ls - List 
+rm -rf ( rm -rf /)
+git rm -rf node-modules
+git reset --hard HEAD - Returns the repository to its previous state.
