@@ -1,0 +1,17 @@
+= assigning values
+== comparison by value => returns true or false '1' == 1 => true
+=== comparison by value AND type => returns true or false '1' === 1 => false
+
+!= negation by value '1' != 1 => false
+!== negation by value and type '1' !== 1 true
+
+FALSY values = 
+    false,
+    null,
+    undefined,
+    ""
+
+TRUTHY values = 
+    1,
+    " ",
+    true
