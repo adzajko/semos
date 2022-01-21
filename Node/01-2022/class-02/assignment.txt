@@ -1,0 +1,14 @@
+1. Create an array of sports people. Each object should have an id, name, sport and age.
+
+2. Create full CRUD capabilities for the array, using separate functions. (In a separate file.)
+
+3. Export the functions from said file.
+
+4. Import all functions in a main app file.
+
+5. Inside the main app file, chain several functions in order 
+    - Add a new sportsman to the array
+    - Edit an existing member
+    - Delete another existing member
+    - Read the new state of the array
+    (Hint: The above should be done by chaining promises)
