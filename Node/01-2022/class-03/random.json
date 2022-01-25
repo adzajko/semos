@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "name": "Petko",
+    "isActive": false,
+    "address": {
+      "streetName": "Partizanska",
+      "streetNumber": 82
+    }
+  }
+]

@@ -1,0 +1,23 @@
+HTTP -> Hypertext Transfer Protocol
+Request and Response -> For every request there has to be a Response
+
+HTTP Request
+    - URL http://domainName.com
+        - http://domainName.com/albums/11 -- URL parametar
+        - http://domainName.com/albums?key=value&keyTwo=valueTwo -- Query Params
+    - HTTP Verbs: GET, POST, PUT, DELETE
+    - BODY
+    - HEADERS 
+
+HTTP Response
+    - Status Code
+        1xx Info
+        2xx (200, 201) - Success Response
+        3xx - Redirects
+        4xx (400, 401, 403, 404, 409) - Client Error
+        5xx (500, 501, 502) - Server error
+    - BODY
+    - HEADERS
+
+REST - Representational State Transfer
+uses .json (Javascript Notation Object) files
