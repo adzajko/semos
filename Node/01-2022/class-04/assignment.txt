@@ -1,0 +1,6 @@
+- Create a http server running on the 8080 port
+- In a separate file, import the file system module.
+- Create a function that first writes to a file, then reads and returns the file contents.
+- Inside the http server request listener, call the above defined file operation.
+
+BONUS - Send the file op response as the request response.
