@@ -1,0 +1,5 @@
+Create an express application
+Register the following routes
+/home - Get request. Should return a welcome message
+/register - POST request. Should accept a payload (username, password) and return a 201 response.
+404 handler
