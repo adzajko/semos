@@ -4,7 +4,7 @@ const {
   getAllSongs,
   updateSong,
   deleteSong,
-} = require('../controllers/kafana');
+} = require('../controllers/songs');
 
 router.post('/kafana', addNewSong);
 router.get('/kafana', getAllSongs);
