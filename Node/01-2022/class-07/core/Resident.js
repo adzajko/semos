@@ -1,3 +1,7 @@
+/**
+ * The model is the only place where we have access to the data itself, including any relevant functions for manipulation (CRUD)
+ * Direct data access from other files is discouraged.
+ */
 let residents = [
   {
     _id: 1,

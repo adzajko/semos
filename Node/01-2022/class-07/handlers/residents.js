@@ -1,3 +1,9 @@
+/**
+ * Importing our model.
+ * The controller (or handler) file should only be concerned with unpacking requests (extracting body, url params etc).
+ * And returning responses.
+ * All complex data handling, including CRUD operations should be passed to the model.
+ */
 const Resident = require('../core/Resident');
 
 const getAllResidents = async (req, res, next) => {
