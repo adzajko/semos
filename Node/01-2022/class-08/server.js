@@ -6,6 +6,10 @@ const dbConnector = require('./config/db');
 const PORT = process.env.PORT;
 const server = http.createServer(app);
 
+/**
+ * Slight alteration to our usual logic, by calling the dbConnector function first,
+ * we ensure that the server will only be up and running if the database connection was successful.
+ */
 dbConnector()
   .then(() => {
     server.listen(PORT, () => {
