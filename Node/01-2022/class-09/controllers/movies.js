@@ -33,7 +33,7 @@ const getMovieByTitle = async (req, res, next) => {
 };
 
 const createMovies = async (req, res, next) => {
-  const { movies } = req.body;
+  const movies = req.body;
 
   if (!movies || movies.length === 0) {
     return res.status(400).json('Missing data!');
@@ -66,6 +66,20 @@ const updateMovie = async (req, res, next) => {
       tags,
     });
     return res.status(200).json('Movie was updated!');
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+const updateManyMoves = async (req, res, next) => {
+  const movies = req.body;
+
+  if (!movies || movies.length < 0) {
+    return res.status(400).json('Missing data');
+  }
+
+  try {
+    await Movie.updateMany({ releaseDate: '2014' });
   } catch (error) {
     return res.status(500).json(error);
   }
