@@ -11,6 +11,7 @@ const PREFIX = process.env.API_PREFIX;
 
 router.post(PREFIX + '/register', registerUser);
 router.post(PREFIX + '/login', login);
+// One way to make sure a middleware gets executed before the handler, passing it before the request handler.
 router.put(PREFIX + '/change-password', authMiddleware, changePassword);
 router.delete(PREFIX + '/users/:username', authMiddleware, deleteUser);
 
